@@ -1,0 +1,27 @@
+{
+  "name": "seneca-hi-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/k33g/seneca-hi-service.git"
+  },
+  "keywords": [],
+  "author": "@k33g",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/k33g/seneca-hi-service/issues"
+  },
+  "homepage": "https://github.com/k33g/seneca-hi-service#readme",
+  "dependencies": {
+    "seneca": "^3.3.0",
+    "seneca-balance-client": "^0.6.0",
+    "seneca-mesh": "^0.10.0",
+    "seneca-redis-sync-transport": "^0.1.0",
+    "seneca-redis-transport": "^0.3.0"
+  }
+}
