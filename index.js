@@ -1,4 +1,5 @@
-const redisUrl = process.env.REDIS_URL
+const redisUrl = process.env.REDIS_URL || "redis://:5G4sk77fpDzwgTOALAx@bfxadtj3b-redis.services.clever-cloud.com:3079"
+const http = require('http')
 
 const seneca = require('seneca')({
   transport: {
@@ -21,11 +22,14 @@ seneca
 .use('redis-transport')
 .use('mesh', {
   isbase: true,
-  pin: 'role:salutation,cmd:hi',
-  type: 'redis'
+  pin: 'role:salutation,cmd:hi'
 })
-.listen({
-  port: port
+.listen()
+
+http.createServer((request, response) => {
+  console.log(request.url)
+  response.end('Hello!')
 })
-//  host: '0.0.0.0',
-console.info(`🌍 service is listening on ${port}`)
+.listen(port, (err) => {
+  console.info(`🌍 service is listening on ${port}`)
+})
